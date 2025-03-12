@@ -134,3 +134,99 @@ module.exports = {
   update_a_task,
   delete_a_task,
 };
+
+// THESE ARE THE CHANGES MADE IN THE TASK CONTROLLER FILE
+// const taskModel = require("../models/taskModel");
+
+// // Create a task
+// const create_a_task = async (req, res, next) => {
+//   const userId = req.user._id;
+//   try {
+//     const newTask = await taskModel.create({ ...req.body, user: userId });
+//     res.status(201).json({ newTask, message: "Task created successfully" });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
+
+// // Get a single task
+// const get_a_task = async (req, res, next) => {
+//   const { id } = req.params;
+//   const userId = req.user._id;
+
+//   try {
+//     const getTask = await taskModel.findById(id);
+//     if (!getTask || getTask.user.toString() !== userId.toString()) {
+//       return res.status(404).json({ message: "Task not found" });
+//     }
+//     res.status(200).json({ getTask, message: "Task found successfully" });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
+
+// // Get all tasks with optional category filter
+// const get_all_tasks = async (req, res, next) => {
+//   const userId = req.user._id;
+//   const { category } = req.query;
+
+//   try {
+//     const filter = { user: userId, ...(category && { category }) };
+//     const tasks = await taskModel.find(filter);
+
+//     res.status(200).json({
+//       tasks,
+//       message: tasks.length ? "Tasks retrieved successfully." : "No tasks found.",
+//     });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
+
+// // Update a task
+// const update_a_task = async (req, res, next) => {
+//   const { id } = req.params;
+//   const userId = req.user._id;
+
+//   try {
+//     const updatedTask = await taskModel.findOneAndUpdate(
+//       { _id: id, user: userId },
+//       req.body,
+//       { new: true, runValidators: true }
+//     );
+
+//     if (!updatedTask) {
+//       return res.status(404).json({ message: "Task not found or unauthorized" });
+//     }
+
+//     res.status(200).json({ task: updatedTask, message: "Task updated successfully." });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
+
+// // Delete a task
+// const delete_a_task = async (req, res, next) => {
+//   const { id } = req.params;
+//   const userId = req.user._id;
+
+//   try {
+//     const deletedTask = await taskModel.findOneAndDelete({ _id: id, user: userId });
+
+//     if (!deletedTask) {
+//       return res.status(404).json({ message: "Task not found or unauthorized" });
+//     }
+
+//     res.status(200).json({ deletedTask, message: "Task deleted successfully" });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
+
+// module.exports = {
+//   create_a_task,
+//   get_a_task,
+//   get_all_tasks,
+//   update_a_task,
+//   delete_a_task,
+// };

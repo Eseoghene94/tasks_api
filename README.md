@@ -1,10 +1,8 @@
-![Axia Africa](/axia_africa.png)
-
 # Task Management API
 
-Welcome to the Task Management API! This API allows users to create,
-read, update, and delete tasks. Users are able to categorize tasks, set
-deadlines, and mark tasks as complete or incomplete.
+![Axia Africa](/axia_africa.png)
+
+Welcome to the Task Management API! This API allows users to create, read, update, and delete tasks. Users are able to categorize tasks, set deadlines, and mark tasks as complete or incomplete.
 
 ## 🚀 Features
 
@@ -18,7 +16,7 @@ deadlines, and mark tasks as complete or incomplete.
 
 ### Base URL
 
-```
+```plaintext
 https://api.example.com/v1
 ```
 
